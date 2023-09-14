@@ -1,0 +1,11 @@
+pipeline {
+    agent any
+    stages {
+        stage('build') {
+            steps {
+                sh 'aws s3 cp --recursive html/ s3://test1ani-bucket/application/'
+                sh 'aws s3 cp --recursive html/ s3://test1ani-bucket/application/'
+            }
+        }
+    }
+}
