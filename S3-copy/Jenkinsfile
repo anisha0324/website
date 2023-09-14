@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'aws s3 cp --recursive ./html s3://test1ani-bucket/application/'
-                sh 'aws s3 cp --recursive ./images s3://test1ani-bucket/application/'
+                sh 'aws s3 cp --recursive  ${WORKSPACE}./html/ s3://test1ani-bucket/application/'
+                sh 'aws s3 cp --recursive ${WORKSPACE}./images/ s3://test1ani-bucket/application/'
             }
         }
     }
